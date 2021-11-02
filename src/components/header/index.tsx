@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
-const Header = () => (
+export const Header = () => (
 	<header class={style.header}>
 		<h1>Preact App</h1>
 		<nav>
@@ -12,5 +12,3 @@ const Header = () => (
 		</nav>
 	</header>
 );
-
-export default Header;
