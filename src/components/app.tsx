@@ -1,14 +1,11 @@
 import { h } from 'preact';
 import { Router, Route } from 'preact-router';
-
-import { Header } from './header';
-import { Home } from '../views/home';
+import { Calendar } from '../views/Calendar';
 
 export const App = () => (
 	<div id="app">
-		<Header />
 		<Router>
-			<Route path="/" component={Home} />
+			<Route path="/" component={Calendar} />
 		</Router>
 	</div>
 )
