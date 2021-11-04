@@ -7,7 +7,7 @@ import icSearch from '../../assets/icons/search.png'
 import icUser from '../../assets/icons/user.png'
 import icEyeOff from '../../assets/icons/eye-off.png'
 import icAdjustment from '../../assets/icons/adjustment.png'
-import style from './calendar-styles.scss';
+import style from './Header.scss';
 
 export const Header = () => {
 	return (

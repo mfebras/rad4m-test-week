@@ -36,6 +36,10 @@ a {
   color: white;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .bg-primary {
   background-color: colors.$primary;
 }
@@ -70,6 +74,10 @@ a {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .btn,

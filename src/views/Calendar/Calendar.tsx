@@ -1,8 +1,9 @@
 import { h } from 'preact';
 import { Header } from '../../components/Calendar/Header';
+import { TabContentMonth } from '../../components/Calendar/TabContentMonth';
 import icChevronLeft from '../../assets/icons/chevron-left.png'
 import icChevronRight from '../../assets/icons/chevron-right.png'
-import './style.scss';
+import './Calendar.scss';
 
 export const Calendar = () => {
 	return (
@@ -27,6 +28,10 @@ export const Calendar = () => {
 					<a class="highlight" href="#">Week</a>
 					<a class="highlight" href="#">Day</a>
 				</div>
+			</div>
+
+			<div>
+				<TabContentMonth/>
 			</div>
 		</div>
 	);
