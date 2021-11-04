@@ -1,7 +1,7 @@
-@import "../../styles/colors";
+@use "../../styles/colors";
 
 .calendar {
   min-height: 100%;
   width: 100%;
-  border-left: 10px solid $primary;
+  border-left: 10px solid colors.$primary;
 }

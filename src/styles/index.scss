@@ -9,6 +9,7 @@ body {
   margin: 0;
   font-family: $primary-font, "Helvetica Neue", arial, sans-serif;
   font-weight: 400;
+  font-size: 14px;
   color: $black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +21,22 @@ body {
 
 #app {
   height: 100%;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mr-1 {
+  margin-right: 12px;
 }
 
 .flex {
@@ -44,4 +61,28 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.btn,
+%btn {
+  height: 28px;
+  background: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: $grey;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.btn-outline {
+  @extend %btn;
+
+  border: 1px solid #eaeaea;
+}
+
+.btn-icon {
+  img {
+    height: 14px;
+  }
 }
