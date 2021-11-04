@@ -1,5 +1,5 @@
-@import "colors";
-@import "fonts";
+@use "colors";
+@use "fonts";
 
 html,
 body {
@@ -7,10 +7,10 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: $primary-font, "Helvetica Neue", arial, sans-serif;
+  font-family: fonts.$primary-font, "Helvetica Neue", arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: $black;
+  color: colors.$black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,16 +19,25 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: colors.$black;
+}
+
 #app {
   height: 100%;
 }
 
 .text-primary {
-  color: $primary;
+  color: colors.$primary;
+}
+
+.text-white {
+  color: white;
 }
 
 .bg-primary {
-  background-color: $primary;
+  background-color: colors.$primary;
 }
 
 .m-0 {
@@ -69,7 +78,7 @@ body {
   background: #fff;
   padding: 5px 10px;
   cursor: pointer;
-  color: $grey;
+  color: colors.$grey;
   border: none;
   display: flex;
   align-items: center;

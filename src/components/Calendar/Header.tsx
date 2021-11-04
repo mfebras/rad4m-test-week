@@ -7,7 +7,7 @@ import icSearch from '../../assets/icons/search.png'
 import icUser from '../../assets/icons/user.png'
 import icEyeOff from '../../assets/icons/eye-off.png'
 import icAdjustment from '../../assets/icons/adjustment.png'
-import style from './style.scss';
+import style from './calendar-styles.scss';
 
 export const Header = () => {
 	return (
@@ -32,7 +32,7 @@ export const Header = () => {
 					<button class={`btn btn-icon ${style.btnCalendar}`}>
 						<img src={icGrid} alt="" />
 						<b>Calendar</b>
-						<img class={style.icon_sm} src={icChevronDown} alt="" />
+						<img class={style.iconSm} src={icChevronDown} alt="" />
 					</button>
 				</div>
 				<div class="flex flex-row items-center">

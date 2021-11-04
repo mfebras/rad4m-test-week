@@ -1,5 +1,7 @@
 @use "../../styles/colors";
 
+/* Begin::Header Component */
+
 .header {
   padding: 8px 16px;
 }
@@ -27,7 +29,7 @@
   padding-left: 0;
 
   .iconSm {
-    height: 6px;
+    height: 8px;
   }
 
   b {
@@ -57,3 +59,5 @@
   padding-right: 6px;
   margin-right: 9px;
 }
+
+/* End::Header Component */

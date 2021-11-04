@@ -5,3 +5,48 @@
   width: 100%;
   border-left: 10px solid colors.$primary;
 }
+
+.sub-header {
+  font-size: 12px;
+  padding: 10px 16px;
+  position: relative;
+  background: rgb(234 243 251);
+  background:
+    linear-gradient(
+      90deg,
+      #eaf3fb 0%,
+      #d4e7f8 50%,
+      #f4f8fd 100%
+    );
+
+  .highlight {
+    padding: 5px 20px;
+  }
+
+  .current-date {
+    color: colors.$lynch;
+    margin-left: 20px;
+
+    .btn-chevron {
+      background: transparent;
+      padding: 5px 16px;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 6px;
+        height: 10px;
+      }
+    }
+  }
+
+  .tab-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
