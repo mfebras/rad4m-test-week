@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import moment from 'moment';
-import { Header, TabContentMonth, TabContentWeek } from '../../components/Calendar';
+import { Header, TabContentMonth, TabContentWeek, TabContentDay } from '../../components/Calendar';
 import icChevronLeft from '../../assets/icons/chevron-left.png'
 import icChevronRight from '../../assets/icons/chevron-right.png'
 import './Calendar.scss';
@@ -19,6 +19,8 @@ export const Calendar = () => {
 			let endWeekDate = moment().endOf('week');
 			date = startWeekDate.format('MMM') +' '+ startWeekDate.format('Do') +' - '+
 				endWeekDate.format('MMM') +' '+ endWeekDate.format('Do');
+		} else {
+			date = moment().format('Do') +' '+ moment().format('MMM');
 		}
 
 		setActiveDate(date);
@@ -68,6 +70,7 @@ export const Calendar = () => {
 				<div class="tab-content">
 					<TabContentMonth active={(activeTab === 'month' ? true : false)} />
 					<TabContentWeek active={(activeTab === 'week' ? true : false)} />
+					<TabContentDay active={(activeTab === 'day' ? true : false)} />
 				</div>
 			</div>
 		</div>

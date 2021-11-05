@@ -1,8 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
-import icChevronLeft from '../../assets/icons/chevron-left.png'
-import icChevronRight from '../../assets/icons/chevron-right.png'
 import style from './TabContent.scss';
 
 export const TabContentWeek = (props) => {
@@ -37,7 +35,7 @@ export const TabContentWeek = (props) => {
 	}, [])
 
 	const convertHour = (hour: number) => {
-		return moment(hour, ['HH']).format('hh A');
+		return moment(hour, ['HH']).format('hh:mm A');
 	}
 
 	const isWeekend = (date) => {
@@ -62,15 +60,15 @@ export const TabContentWeek = (props) => {
 			<div class="flex-wrap justify-between">
 				{hours.map((hour, index) => (
 					<>
-					<div class={`${style.calendarItem} flex items-center justify-center`}>
-						{hour}
-					</div>
-
-					{week.map((item, index) => (
-						<div class={`${style.calendarItem} ${(isWeekend(item.date) ? style.weekend : '')}`}>
-							<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
+						<div class={`${style.calendarItem} flex items-center justify-center`}>
+							{hour}
 						</div>
-					))}
+
+						{week.map((item, index) => (
+							<div class={`${style.calendarItem} ${(isWeekend(item.date) ? style.weekend : '')}`}>
+								<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
+							</div>
+						))}
 					</>
 				))}
 			</div>
