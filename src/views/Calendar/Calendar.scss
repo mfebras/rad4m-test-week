@@ -5,14 +5,14 @@
   min-height: 100%;
   width: 100%;
   border-left: 10px solid colors.$primary;
-  background: url('../../assets/images/calendar-background.png');
+  background: url("../../assets/images/calendar-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .container {
-  height: calc(100vh - sizes.$calendarHeaderHeight);
+  height: calc(100vh - sizes.$calendar-header-height);
   overflow-y: auto;
 }
 
@@ -60,5 +60,5 @@
 }
 
 .tab-content {
-  padding: 0 16px 16px 16px;
+  padding: 0 16px 16px;
 }

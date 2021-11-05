@@ -13,13 +13,13 @@
 }
 
 .calendarItemBasic,
-%calendarItemBasic {
-  background: #ffffff99;
+%calendar-item-basic {
+  background: #fff9;
   margin-bottom: 3px;
 }
 
 .calendarItem {
-  @extend %calendarItemBasic;
+  @extend %calendar-item-basic;
 
   width: calc(100% / 7 - 3px);
   height: 140px;
@@ -60,7 +60,7 @@
   }
 
   .date {
-    padding: 0 14px 12px 14px;
+    padding: 0 14px 12px;
   }
 }
 
@@ -83,7 +83,7 @@
   }
 
   .hour {
-    @extend %calendarItemBasic;
+    @extend %calendar-item-basic;
 
     width: calc(100% / 8 - 3px);
     height: 50px;
