@@ -8,7 +8,22 @@ import './Calendar.scss';
 
 export const Calendar = () => {
 	const [activeTab, setActiveTab] = useState('month');
-	const activeDate = moment().format('MMMM') +' '+ moment().format('YYYY');
+	const [activeDate, setActiveDate] = useState(moment().format('MMMM') +' '+ moment().format('YYYY'));
+
+	const onChangeTab = (tab: string) => {
+		let date = null;
+		if (tab == 'month') {
+			date = moment().format('MMMM') +' '+ moment().format('YYYY');
+		} else if (tab == 'week') {
+			let startWeekDate = moment().startOf('week');
+			let endWeekDate = moment().endOf('week');
+			date = startWeekDate.format('MMM') +' '+ startWeekDate.format('Do') +' - '+
+				endWeekDate.format('MMM') +' '+ endWeekDate.format('Do');
+		}
+
+		setActiveDate(date);
+		setActiveTab(tab);
+	}
 
 	return (
 		<div class="calendar">
@@ -31,19 +46,19 @@ export const Calendar = () => {
 					<div class="tab-menu">
 						<button
 							class={`highlight ${activeTab === 'month' ? 'bg-primary text-white' : 'bg-white'}`}
-							onClick={() => setActiveTab('month')}
+							onClick={() => onChangeTab('month')}
 						>
 							Month
 						</button>
 						<button
 							class={`highlight ${activeTab === 'week' ? 'bg-primary text-white' : 'bg-white'}`}
-							onClick={() => setActiveTab('week')}
+							onClick={() => onChangeTab('week')}
 						>
 							Week
 						</button>
 						<button
 							class={`highlight ${activeTab === 'day' ? 'bg-primary text-white' : 'bg-white'}`}
-							onClick={() => setActiveTab('day')}
+							onClick={() => onChangeTab('day')}
 						>
 							Day
 						</button>
