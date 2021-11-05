@@ -1,13 +1,19 @@
 @use "../../assets/styles/colors";
+@use "../../assets/styles/sizes";
 
 .calendar {
   min-height: 100%;
   width: 100%;
   border-left: 10px solid colors.$primary;
+  background: url('../../assets/images/calendar-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
-  background: url('../../assets/images/calendar-background.png') no-repeat center;
+  height: calc(100vh - sizes.$calendarHeaderHeight);
+  overflow-y: auto;
 }
 
 .sub-header {
