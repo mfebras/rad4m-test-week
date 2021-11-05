@@ -14,6 +14,7 @@
   background: linear-gradient(90deg, #eaf3fb 0%, #d4e7f8 50%, #f4f8fd 100%);
 
   .highlight {
+    border: none;
     padding: 5px 20px;
   }
 
@@ -39,8 +40,12 @@
     left: 50%;
     transform: translateX(-50%);
 
-    a:not(:first-child) {
-      margin-left: 20px;
+    .highlight {
+      cursor: pointer;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
     }
   }
 }
