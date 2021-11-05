@@ -21,9 +21,9 @@ export const Header = () => {
 				</div>
 				<div class="flex flex-row items-center">
 					<button class="btn-outline btn-icon mr-1">
-						<img src={icUsers} alt="" /> / 12
+						<img src={icUsers} alt="" style={{ marginRight: '5px' }} /> / 12
 					</button>
-					<button class="btn-outline">Active users / <span class="text-primary">12</span></button>
+					<button class="btn-outline">Active users / <span class="text-primary" style={{ marginLeft: '4px' }}>12</span></button>
 					<button class="btn">...</button>
 				</div>
 			</div>

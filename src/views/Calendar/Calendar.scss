@@ -6,12 +6,15 @@
   border-left: 10px solid colors.$primary;
 }
 
+.container {
+  background: url('../../assets/images/calendar-background.png') no-repeat center;
+}
+
 .sub-header {
   font-size: 12px;
   padding: 10px 16px;
   position: relative;
-  background: rgb(234 243 251);
-  background: linear-gradient(90deg, #eaf3fb 0%, #d4e7f8 50%, #f4f8fd 100%);
+  background: #ffffff80;
 
   .highlight {
     border: none;
@@ -48,4 +51,8 @@
       }
     }
   }
+}
+
+.tab-content {
+  padding: 0 16px 16px 16px;
 }

@@ -13,28 +13,30 @@ export const Calendar = () => {
 		<div class="calendar">
 			<Header />
 
-			<div class="sub-header flex flex-row items-center">
-				<div class="highlight bg-primary text-white">Today</div>
+			<div class="container">
+				<div class="sub-header flex flex-row items-center">
+					<div class="highlight bg-primary text-white">Today</div>
 
-				<div class="current-date">
-					<button class="btn-chevron">
-						<img src={icChevronLeft} alt="<" />
-					</button>
-					<b>{activeDate}</b>
-					<button class="btn-chevron">
-						<img src={icChevronRight} alt=">" />
-					</button>
+					<div class="current-date">
+						<button class="btn-chevron">
+							<img src={icChevronLeft} alt="<" />
+						</button>
+						<b>{activeDate}</b>
+						<button class="btn-chevron">
+							<img src={icChevronRight} alt=">" />
+						</button>
+					</div>
+
+					<div class="tab-menu">
+						<button class="highlight bg-primary text-white" href="#">Month</button>
+						<button class="highlight bg-white" href="#">Week</button>
+						<button class="highlight bg-white" href="#">Day</button>
+					</div>
 				</div>
 
-				<div class="tab-menu">
-					<button class="highlight bg-primary text-white" href="#">Month</button>
-					<button class="highlight bg-white" href="#">Week</button>
-					<button class="highlight bg-white" href="#">Day</button>
+				<div class="tab-content">
+					<TabContentMonth/>
 				</div>
-			</div>
-
-			<div>
-				<TabContentMonth/>
 			</div>
 		</div>
 	);

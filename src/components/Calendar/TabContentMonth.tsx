@@ -28,7 +28,7 @@ export const TabContentMonth = () => {
 	}
 
 	return (
-		<div class="tab-content">
+		<div>
 			<div class={`${style.calendarTitle} flex flex-row`}>
 				<div class={`${style.title} text-center`}>Mon</div>
 				<div class={`${style.title} text-center`}>Tue</div>
@@ -38,6 +38,7 @@ export const TabContentMonth = () => {
 				<div class={`${style.title} text-center`}>Sat</div>
 				<div class={`${style.title} text-center`}>Sun</div>
 			</div>
+
 			<div class="flex-wrap justify-between">
 				{calendar.map((week, index) => (
 					week.days.map((day, i) => (

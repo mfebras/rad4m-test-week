@@ -3,8 +3,7 @@
 .calendarTitle {
   padding-top: 24px;
   padding-bottom: 5px;
-  background: rgb(217 233 248);
-  background: linear-gradient(90deg, #d9e9f8 0%, #add0f2 50%, #e5f2fc 100%);
+  background: transparent;
 
   .title {
     width: calc(100% / 7);
@@ -16,7 +15,7 @@
 .monthDate {
   width: calc(100% / 7 - 3px);
   height: 140px;
-  background: #eeeeee99;
+  background: #ffffff99;
   margin-bottom: 3px;
 
   &.weekend {
