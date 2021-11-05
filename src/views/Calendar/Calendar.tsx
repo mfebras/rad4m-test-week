@@ -47,19 +47,19 @@ export const Calendar = () => {
 
 					<div class="tab-menu">
 						<button
-							class={`highlight ${activeTab === 'month' ? 'bg-primary text-white' : 'bg-white'}`}
+							class={`highlight ${activeTab === 'month' ? 'bg-primary text-white' : 'bg-transparent'}`}
 							onClick={() => onChangeTab('month')}
 						>
 							Month
 						</button>
 						<button
-							class={`highlight ${activeTab === 'week' ? 'bg-primary text-white' : 'bg-white'}`}
+							class={`highlight ${activeTab === 'week' ? 'bg-primary text-white' : 'bg-transparent'}`}
 							onClick={() => onChangeTab('week')}
 						>
 							Week
 						</button>
 						<button
-							class={`highlight ${activeTab === 'day' ? 'bg-primary text-white' : 'bg-white'}`}
+							class={`highlight ${activeTab === 'day' ? 'bg-primary text-white' : 'bg-transparent'}`}
 							onClick={() => onChangeTab('day')}
 						>
 							Day
