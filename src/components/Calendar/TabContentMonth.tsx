@@ -1,30 +1,38 @@
 import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
-import icChevronLeft from '../../assets/icons/chevron-left.png'
-import icChevronRight from '../../assets/icons/chevron-right.png'
-import style from './TabContentMonth.scss';
+import style from './TabContent.scss';
 
-export const TabContentMonth = () => {
+export const TabContentMonth = (props) => {
+	const [calendar, setCalendar] = useState([]);
+
 	moment.updateLocale('en', {
 		week: {
 			dow: 1,
 		},
 	})
 
-	const startWeek = moment().startOf('month').week();
-	const endWeek = moment().endOf('month').week();
+	useEffect(() => {
+		const startWeek = moment().startOf('month').week();
+		const endWeek = moment().endOf('month').week();
+		let calendar = []
 
-	let calendar = []
-	for(let week = startWeek; week < endWeek; week++){
-		calendar.push({
-			week: week,
-			days: Array(7).fill(0).map((n, i) => moment().week(week).startOf('week').clone().add(n + i, 'day'))
-		});
+		for(let week = startWeek; week < endWeek; week++){
+			calendar.push({
+				week: week,
+				days: Array(7).fill(0).map((n, i) => moment().week(week).startOf('week').clone().add(n + i, 'day'))
+			});
+		}
+		setCalendar(calendar);
+	}, [])
+
+	const isWeekend = (date) => {
+		let dayOfWeek = date.day();
+		return (dayOfWeek === 6) || (dayOfWeek  === 0); // 6 = Saturday, 0 = Sunday
 	}
 
-	const isWeekend = (day) => {
-		let dayOfWeek = day.day();
-		return (dayOfWeek === 6) || (dayOfWeek  === 0); // 6 = Saturday, 0 = Sunday
+	if (!props.active) {
+		return null;
 	}
 
 	return (
@@ -42,7 +50,7 @@ export const TabContentMonth = () => {
 			<div class="flex-wrap justify-between">
 				{calendar.map((week, index) => (
 					week.days.map((day, i) => (
-						<div class={`${style.monthDate} ${(isWeekend(day) ? style.weekend : '')} flex flex-col justify-between`}>
+						<div class={`${style.calendarItem} ${(isWeekend(day) ? style.weekend : '')} flex flex-col justify-between`}>
 							<div>
 								<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
 								<div class={`${style.bar} ${style.barStart} ${style.wOneSide} flex items-center text-white`}>Webdesign</div>

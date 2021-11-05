@@ -1,12 +1,13 @@
 import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import moment from 'moment';
-import { Header } from '../../components/Calendar/Header';
-import { TabContentMonth } from '../../components/Calendar/TabContentMonth';
+import { Header, TabContentMonth, TabContentWeek } from '../../components/Calendar';
 import icChevronLeft from '../../assets/icons/chevron-left.png'
 import icChevronRight from '../../assets/icons/chevron-right.png'
 import './Calendar.scss';
 
 export const Calendar = () => {
+	const [activeTab, setActiveTab] = useState('month');
 	const activeDate = moment().format('MMMM') +' '+ moment().format('YYYY');
 
 	return (
@@ -28,14 +29,30 @@ export const Calendar = () => {
 					</div>
 
 					<div class="tab-menu">
-						<button class="highlight bg-primary text-white" href="#">Month</button>
-						<button class="highlight bg-white" href="#">Week</button>
-						<button class="highlight bg-white" href="#">Day</button>
+						<button
+							class={`highlight ${activeTab === 'month' ? 'bg-primary text-white' : 'bg-white'}`}
+							onClick={() => setActiveTab('month')}
+						>
+							Month
+						</button>
+						<button
+							class={`highlight ${activeTab === 'week' ? 'bg-primary text-white' : 'bg-white'}`}
+							onClick={() => setActiveTab('week')}
+						>
+							Week
+						</button>
+						<button
+							class={`highlight ${activeTab === 'day' ? 'bg-primary text-white' : 'bg-white'}`}
+							onClick={() => setActiveTab('day')}
+						>
+							Day
+						</button>
 					</div>
 				</div>
 
 				<div class="tab-content">
-					<TabContentMonth/>
+					<TabContentMonth active={(activeTab === 'month' ? true : false)} />
+					<TabContentWeek active={(activeTab === 'week' ? true : false)} />
 				</div>
 			</div>
 		</div>
