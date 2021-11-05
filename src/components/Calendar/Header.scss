@@ -1,6 +1,8 @@
 @use "../../assets/styles/colors";
+@use "../../assets/styles/sizes";
 
 .header {
+  height: sizes.$calendarHeaderHeight;
   padding: 8px 16px;
   background: white;
 }
@@ -16,8 +18,6 @@
 }
 
 .toolbar {
-  margin-top: 10px;
-
   .btnIcon {
     margin-right: 9px;
   }

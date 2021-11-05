@@ -11,7 +11,7 @@ import style from './Header.scss';
 
 export const Header = () => {
 	return (
-		<header class={style.header}>
+		<header class={`${style.header} flex flex-col justify-between`}>
 			<div class="flex flex-row justify-between">
 				<div class="flex flex-col">
 					<h3 class={`${style.title} m-0`}>Board Name</h3>
