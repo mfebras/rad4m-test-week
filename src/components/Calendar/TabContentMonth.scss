@@ -12,3 +12,49 @@
     color: colors.$lynch;
   }
 }
+
+.monthDate {
+  width: calc(100% / 7 - 3px);
+  height: 140px;
+  background: #eeeeee99;
+  margin-bottom: 3px;
+
+  &.weekend {
+    background: colors.$primary40;
+    color: white;
+  }
+
+  .bar {
+    width: 100%;
+    height: 18px;
+    background: colors.$green;
+    margin-top: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 13px;
+  }
+
+  .wOneSide {
+    width: calc(100% - 3px);
+  }
+
+  .wTwoSide {
+    width: calc(100% - 6px);
+  }
+
+  .barStart {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: 3px;
+  }
+
+  .barEnd {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 3px;
+  }
+
+  .date {
+    padding: 0 14px 12px 14px;
+  }
+}
