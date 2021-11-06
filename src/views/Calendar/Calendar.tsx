@@ -1,7 +1,12 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useContext } from 'preact/hooks';
 import moment from 'moment';
-import { Header, TabContentMonth, TabContentWeek, TabContentDay } from '../../components/Calendar';
+import { ModalContext } from '../../contexts/ModalContext';
+import {
+	AgendaFormCreate, Header,
+	TabContentMonth, TabContentWeek, TabContentDay
+} from '../../components/Calendar';
+import { Modal } from '../../components/Modal/Modal';
 import icChevronLeft from '../../assets/icons/chevron-left.png'
 import icChevronRight from '../../assets/icons/chevron-right.png'
 import './Calendar.scss';
@@ -9,6 +14,7 @@ import './Calendar.scss';
 export const Calendar = () => {
 	const [activeTab, setActiveTab] = useState('month');
 	const [activeDate, setActiveDate] = useState(moment().format('MMMM') +' '+ moment().format('YYYY'));
+    const { modal, setModal } = useContext(ModalContext);
 
 	const onChangeTab = (tab: string) => {
 		let date = null;
@@ -73,6 +79,10 @@ export const Calendar = () => {
 					<TabContentDay active={(activeTab === 'day' ? true : false)} />
 				</div>
 			</div>
+
+			<Modal show={modal.isShow}>
+				<AgendaFormCreate />
+			</Modal>
 		</div>
 	);
 }

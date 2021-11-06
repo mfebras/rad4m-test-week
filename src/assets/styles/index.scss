@@ -19,37 +19,13 @@ body {
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: colors.$black;
+textarea {
+  font-family: fonts.$primary-font;
+  resize: none;
 }
 
 #app {
   height: 100%;
-}
-
-.text-primary {
-  color: colors.$primary;
-}
-
-.text-white {
-  color: white;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.bg-primary {
-  background-color: colors.$primary;
-}
-
-.bg-white {
-  background: white;
-}
-
-.bg-transparent {
-  background: transparent;
 }
 
 .m-0 {
@@ -103,6 +79,11 @@ a {
   border: none;
   display: flex;
   align-items: center;
+  user-select: none;
+
+  &:active {
+    opacity: .7;
+  }
 }
 
 .btn-outline {
@@ -115,4 +96,37 @@ a {
   img {
     height: 14px;
   }
+}
+
+.btn-round {
+  @extend %btn;
+
+  height: 32px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.text-primary {
+  color: colors.$primary;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: colors.$primary;
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-transparent {
+  background: transparent;
 }

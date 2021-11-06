@@ -1,4 +1,6 @@
 import { h } from 'preact';
+import { useContext } from 'preact/hooks';
+import { ModalContext } from '../../contexts/ModalContext';
 import icUsers from '../../assets/icons/users.png'
 import icDotsPurple from '../../assets/icons/dots-purple.png'
 import icGrid from '../../assets/icons/grid.png'
@@ -11,7 +13,10 @@ import icAdjustment from '../../assets/icons/adjustment.png'
 import icGearWhite from '../../assets/icons/gear-white.png'
 import style from './Header.scss';
 
+
 export const Header = () => {
+    const { setModal } = useContext(ModalContext);
+
 	return (
 		<header class={`${style.header} flex flex-col justify-between`}>
 			<div class="flex flex-row justify-between">
@@ -40,7 +45,13 @@ export const Header = () => {
 					</button>
 				</div>
 				<div class="flex flex-row items-center">
-					<button class={`btn btn-icon ${style.btnCalendar}`}>
+					<button
+						class={`btn btn-icon ${style.btnCalendar}`}
+						onClick={() => setModal({
+							isShow: true,
+							type: 'create'
+						})}
+					>
 						<div class={style.btnPlus}>
 							<img src={icPlusWhite} alt="" />
 						</div>
