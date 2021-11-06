@@ -1,0 +1,39 @@
+@use "../../assets/styles/colors";
+
+.select {
+  width: 100%;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+
+  .selected {
+    height: 32px;
+    padding: 7px 15px;
+    border: 1px solid colors.$light-grey;
+    user-select: none;
+
+    img {
+      height: 6px;
+    }
+  }
+
+  .option {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    background: white;
+    border: 1px solid colors.$light-grey;
+    position: absolute;
+    top: 25px;
+    z-index: 5;
+
+    li {
+      padding: 8px 16px;
+
+      &:hover {
+        background: colors.$primary;
+        color: white;
+      }
+    }
+  }
+}
