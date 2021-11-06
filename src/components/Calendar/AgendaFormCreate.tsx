@@ -1,18 +1,19 @@
 import { h } from 'preact';
-import { useState, useEffect, useContext } from 'preact/hooks';
+import { useState, useContext } from 'preact/hooks';
 import { ModalContext } from '../../contexts/ModalContext';
 import { Select } from '../Form';
 import icClose from '../../assets/icons/close.png'
 import icCalendarPurple from '../../assets/icons/calendar-purple.png'
 import icClockPurple from '../../assets/icons/clock-purple.png'
+import { groups, statuses, people } from '../../data/DummyData';
 import style from './Form.scss';
 
 interface DataProps {
 	title: string,
 	group: selectOptionType,
 	status: selectOptionType,
-	startDate: object,
-	finishDate: object,
+	startDate: string,
+	finishDate: string,
 	person: selectOptionType,
 	time: string,
 	description: string
@@ -30,23 +31,6 @@ export const AgendaFormCreate = () => {
 		description: ''
 	});
     const { setModal } = useContext(ModalContext);
-
-	// Dummy data for select
-	const groups: selectOptionType[] = [
-		{ value:1, label: 'Blue Group', color: '#5078f0' },
-		{ value:2, label: 'Red Group', color: '#f05f5f' },
-		{ value:3, label: 'Pink Group', color: '#f05fd0' }
-	];
-	const statuses: selectOptionType[] = [
-		{ value:1, label: 'New', color: '#fea734' },
-		{ value:2, label: 'Process', color: '#5fc4f0' },
-		{ value:3, label: 'Done', color: '#49d74d' }
-	];
-	const persons: selectOptionType[] = [
-		{ value:1, label: 'John Travolta' },
-		{ value:2, label: 'John Doe' },
-		{ value:3, label: 'Alan' }
-	];
 
     const onSubmit = (e: HTMLFormElement) => {
         e.preventDefault();
@@ -155,7 +139,7 @@ export const AgendaFormCreate = () => {
 					<div class={style.col}>
 						<Select
 							placeholder="Select person..."
-							options={persons}
+							options={people}
 							value={data.person}
 							onChange={(e) => handleChange('person', e)}
 						/>
