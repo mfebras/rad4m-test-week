@@ -6,7 +6,9 @@ import style from './TabContent.scss';
 
 export const TabContentMonth = (props) => {
 	const [calendar, setCalendar] = useState([]);
+	const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
+	// Start week from Monday
 	moment.updateLocale('en', {
 		week: {
 			dow: 1,
@@ -27,6 +29,10 @@ export const TabContentMonth = (props) => {
 		setCalendar(calendar);
 	}, [])
 
+	const isToday = (dayName: string) => {
+		return moment().format('ddd') == dayName;
+	}
+
 	if (!props.active) {
 		return null;
 	}
@@ -34,13 +40,11 @@ export const TabContentMonth = (props) => {
 	return (
 		<div>
 			<div class={`${style.calendarTitle} flex flex-row`}>
-				<div class={`${style.title} text-center`}>Mon</div>
-				<div class={`${style.title} text-center`}>Tue</div>
-				<div class={`${style.title} text-center`}>Wed</div>
-				<div class={`${style.title} text-center`}>Thu</div>
-				<div class={`${style.title} text-center`}>Fri</div>
-				<div class={`${style.title} text-center`}>Sat</div>
-				<div class={`${style.title} text-center`}>Sun</div>
+				{dayNames.map((dayName, index) => (
+					<div class={`${style.title} text-center`}>
+						<span class={isToday(dayName) ? style.today + ' bg-primary' : ''}>{dayName}</span>
+					</div>
+				))}
 			</div>
 
 			<div class="flex-wrap justify-between">

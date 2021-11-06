@@ -8,6 +8,7 @@ export const TabContentWeek = (props) => {
 	const [week, setWeek] = useState([]);
 	const [hours, setHours] = useState<string>([]);
 
+	// Start week from Monday
 	moment.updateLocale('en', {
 		week: {
 			dow: 1,
@@ -23,7 +24,8 @@ export const TabContentWeek = (props) => {
 		for (let date = moment(startDate); date.isBefore(endDate); date.add(1, 'days')) {
 			week.push({
 				date: moment(date),
-				day: date.format('DD') +' '+ date.format('ddd')
+				day: date.format('DD') +' '+ date.format('ddd'),
+				isToday: moment(date).isSame(moment(), 'day')
 			});
 		}
 		setWeek(week);
@@ -45,7 +47,9 @@ export const TabContentWeek = (props) => {
 				<div class={`${style.title} text-center`}></div>
 
 				{week.map((item, index) => (
-					<div class={`${style.title} text-center`}>{item.day}</div>
+					<div class={`${style.title} text-center`}>
+						<span class={item.isToday ? style.today + ' bg-primary' : ''}>{item.day}</span>
+					</div>
 				))}
 			</div>
 

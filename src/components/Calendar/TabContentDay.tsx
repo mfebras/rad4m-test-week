@@ -6,7 +6,9 @@ import style from './TabContent.scss';
 
 export const TabContentDay = (props) => {
 	const [hours, setHours] = useState<string>([]);
-	const title = moment().format('DD') +' '+ moment().format('ddd')
+	const title = props.day
+		? moment(props.day).format('DD') +' '+ moment(props.day).format('ddd')
+		: moment().format('DD') +' '+ moment().format('ddd');
 
 	useEffect(() => {
 		let hours = [];
@@ -23,9 +25,9 @@ export const TabContentDay = (props) => {
 	return (
 		<div class={style.dayContent}>
 			<div class={`${style.calendarTitle} flex flex-row justify-center`}>
-				<div class={`${style.title} bg-primary text-center`}>
+				<span class={`${style.today} bg-primary`}>
 					{title}
-				</div>
+				</span>
 			</div>
 
 			<div class="flex-wrap justify-between">

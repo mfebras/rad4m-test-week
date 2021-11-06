@@ -4,11 +4,16 @@
   padding-top: 24px;
   padding-bottom: 5px;
   background: transparent;
+  font-size: 12px;
 
   .title {
     width: calc(100% / 7);
-    font-size: 12px;
     color: colors.$lynch;
+  }
+
+  .today {
+    color: white;
+    padding: 3px 20px;
   }
 }
 
@@ -76,12 +81,6 @@
 }
 
 .dayContent {
-  .title {
-    width: unset;
-    color: white;
-    padding: 3px 20px;
-  }
-
   .hour {
     @extend %calendar-item-basic;
 
