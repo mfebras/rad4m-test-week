@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
+import { CalendarItem } from './CalendarItem';
 import { convertHour, isWeekend } from '../../utils/Helper';
 import style from './TabContent.scss';
 
@@ -61,9 +62,7 @@ export const TabContentWeek = (props) => {
 						</div>
 
 						{week.map((item, index) => (
-							<div class={`${style.calendarItem} ${(isWeekend(item.date) ? style.weekend : '')}`}>
-								<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
-							</div>
+							<CalendarItem type='week' date={item.date} />
 						))}
 					</>
 				))}

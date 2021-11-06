@@ -3,7 +3,7 @@ import { useState, useContext } from 'preact/hooks';
 import moment from 'moment';
 import { ModalContext } from '../../contexts/ModalContext';
 import {
-	AgendaFormCreate, Header,
+	AgendaFormCreate, AgendaFormEdit, Header,
 	TabContentMonth, TabContentWeek, TabContentDay
 } from '../../components/Calendar';
 import { Modal } from '../../components/Modal/Modal';
@@ -17,6 +17,7 @@ export const Calendar = () => {
     const { modal, setModal } = useContext(ModalContext);
 
 	const onChangeTab = (tab: string) => {
+		// Define active date
 		let date = null;
 		if (tab == 'month') {
 			date = moment().format('MMMM') +' '+ moment().format('YYYY');
@@ -81,7 +82,10 @@ export const Calendar = () => {
 			</div>
 
 			<Modal show={modal.isShow}>
-				<AgendaFormCreate />
+				{modal.type == 'create'
+					? <AgendaFormCreate />
+					: <AgendaFormEdit />
+				}
 			</Modal>
 		</div>
 	);

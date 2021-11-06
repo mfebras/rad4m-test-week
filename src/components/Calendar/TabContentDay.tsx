@@ -1,14 +1,14 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
+import { CalendarItem } from './CalendarItem';
 import { convertHour } from '../../utils/Helper';
 import style from './TabContent.scss';
 
 export const TabContentDay = (props) => {
 	const [hours, setHours] = useState<string[]>([]);
-	const title = props.day
-		? moment(props.day).format('DD') +' '+ moment(props.day).format('ddd')
-		: moment().format('DD') +' '+ moment().format('ddd');
+	const date = props.date ? moment(props.date) : moment();
+	const title = date.format('DD') +' '+ date.format('ddd');
 
 	useEffect(() => {
 		let hours = [];
@@ -36,9 +36,7 @@ export const TabContentDay = (props) => {
 						<div class={`${style.hour} flex items-center justify-center`}>
 							{hour}
 						</div>
-						<div class={`${style.calendarItem}`}>
-							<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
-						</div>
+						<CalendarItem type='day' date={date} />
 					</>
 				))}
 			</div>

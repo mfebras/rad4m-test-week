@@ -107,6 +107,11 @@ textarea {
   padding-right: 20px;
 }
 
+.btn-disable {
+  background: #bcbcc5;
+  cursor: not-allowed;
+}
+
 .text-primary {
   color: colors.$primary;
 }

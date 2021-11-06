@@ -1,7 +1,8 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
-import { isWeekend } from '../../utils/Helper';
+import { CalendarItem } from './CalendarItem';
+import { agendas } from '../../data/DummyData';
 import style from './TabContent.scss';
 
 export const TabContentMonth = (props) => {
@@ -16,18 +17,57 @@ export const TabContentMonth = (props) => {
 	})
 
 	useEffect(() => {
+		let calendar = generateMonthCalendar();
+		calendar = placeAgendaToCalendar(calendar);
+
+		setCalendar(calendar);
+	}, [])
+
+	const generateMonthCalendar = () => {
 		const startWeek = moment().startOf('month').week();
 		const endWeek = moment().endOf('month').week();
 		let calendar = []
 
-		for(let week = startWeek; week < endWeek; week++){
-			calendar.push({
-				week: week,
-				days: Array(7).fill(0).map((n, i) => moment().week(week).startOf('week').clone().add(n + i, 'day'))
-			});
+		for (let week = startWeek; week <= endWeek; week++) {
+			for (let i = 0; i < 7; i++) {
+				calendar.push({
+					date: moment().week(week).startOf('week').clone().add(i, 'day')
+				});
+			}
 		}
-		setCalendar(calendar);
-	}, [])
+
+		return calendar;
+	}
+
+	const placeAgendaToCalendar = (calendar) => {
+		for (let i = 0; i < agendas.length; i++) {
+			let startDate = moment(agendas[i].startDate).date();
+			let finishDate = moment(agendas[i].finishDate).date();
+
+			// define agenda bar position
+			for (let k = startDate-1; k < finishDate; k++) {
+				let position = 'agenda1';
+				let isViewMore = false;
+
+				if (calendar[k]['agenda1'] && !calendar[k]['agenda2']) {
+					position = 'agenda2';
+				} else if (calendar[k]['agenda2'] && !calendar[k]['agenda3']) {
+					position = 'agenda3';
+				} else if (calendar[k]['agenda3']) {
+					isViewMore = true;
+					position = null;
+				}
+
+				// if position available (max 3 agenda bars), place the agenda
+				if (position) {
+					calendar[k][position] = agendas[i];
+				}
+				calendar[k]['isViewMore'] = isViewMore;
+			}
+		}
+
+		return calendar;
+	}
 
 	const isToday = (dayName: string) => {
 		return moment().format('ddd') == dayName;
@@ -48,19 +88,15 @@ export const TabContentMonth = (props) => {
 			</div>
 
 			<div class="flex-wrap justify-between">
-				{calendar.map((week, index) => (
-					week.days.map((day, i) => (
-						<div class={`${style.calendarItem} ${(isWeekend(day) ? style.weekend : '')} flex flex-col justify-between`}>
-							<div>
-								<div class={`${style.bar} ${style.barStart} ${style.barEnd} ${style.wTwoSide} flex items-center text-white`}>Webdesign</div>
-								<div class={`${style.bar} ${style.barStart} ${style.wOneSide} flex items-center text-white`}>Webdesign</div>
-								<div class={`${style.bar} ${style.barStart} ${style.wOneSide} flex items-center text-white`}>Webdesign</div>
-							</div>
-							<div class={style.date}>
-								{day.date()}
-							</div>
-						</div>
-					))
+				{calendar.map((item, index) => (
+					<CalendarItem
+						type='month'
+						date={item.date}
+						agenda1={item.agenda1}
+						agenda2={item.agenda2}
+						agenda3={item.agenda3}
+						isViewMore={item.isViewMore}
+					/>
 				))}
 			</div>
 		</div>

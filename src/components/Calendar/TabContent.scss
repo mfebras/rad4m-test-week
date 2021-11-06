@@ -21,6 +21,7 @@
 %calendar-item-basic {
   background: #fff9;
   margin-bottom: 3px;
+  position: relative;
 }
 
 .calendarItem {
@@ -34,14 +35,41 @@
     color: white;
   }
 
+  &.hover:hover {
+    background: colors.$primary40;
+    color: white;
+    cursor: pointer;
+  }
+
   .bar {
     width: 100%;
     height: 18px;
-    background: colors.$green;
     margin-top: 6px;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 13px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .view-more {
+    font-size: 13px;
+    color: colors.$lynch;
+    position: absolute;
+    top: 85px;
+    margin-left: 6px;
+  }
+
+  .bar1 {
+    top: 6px;
+  }
+
+  .bar2 {
+    top: 30px;
+  }
+
+  .bar3 {
+    top: 54px;
   }
 
   .wOneSide {
