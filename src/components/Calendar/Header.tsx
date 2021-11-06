@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import icUsers from '../../assets/icons/users.png'
+import icDotsPurple from '../../assets/icons/dots-purple.png'
 import icGrid from '../../assets/icons/grid.png'
 import icChevronDown from '../../assets/icons/chevron-down.png'
 import icPlusWhite from '../../assets/icons/plus-white.png'
@@ -7,6 +8,7 @@ import icSearch from '../../assets/icons/search.png'
 import icUser from '../../assets/icons/user.png'
 import icEyeOff from '../../assets/icons/eye-off.png'
 import icAdjustment from '../../assets/icons/adjustment.png'
+import icGearWhite from '../../assets/icons/gear-white.png'
 import style from './Header.scss';
 
 export const Header = () => {
@@ -24,7 +26,9 @@ export const Header = () => {
 						<img src={icUsers} alt="" style={{ marginRight: '5px' }} /> / 12
 					</button>
 					<button class="btn-outline">Active users / <span class="text-primary" style={{ marginLeft: '4px' }}>12</span></button>
-					<button class="btn">...</button>
+					<button class="btn btn-icon">
+						<img src={icDotsPurple} alt="..." />
+					</button>
 				</div>
 			</div>
 			<div class={`${style.toolbar} flex flex-row justify-between`}>
@@ -54,6 +58,9 @@ export const Header = () => {
 					</button>
 					<button class={`btn-outline btn-icon ${style.btnIcon}`}>
 						<img src={icAdjustment} alt="" />
+					</button>
+					<button class={`btn btn-icon ${style.btnPrimary}`}>
+						<img src={icGearWhite} alt="" />
 					</button>
 				</div>
 			</div>
