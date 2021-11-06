@@ -25,8 +25,8 @@ export const Modal = ({ children, ...props }) => {
 				onClick={() => closeModal()}
 			></div>
 
-			<div class={style.modalDialog}>
-				<div class={`${style.modalHeader} flex flex-row`}>
+			<div class={style['modal-dialog']}>
+				<div class={`${style['modal-header']} flex flex-row`}>
 					<button
 						class="btn btn-icon"
 						onClick={() => closeModal()}
@@ -34,7 +34,7 @@ export const Modal = ({ children, ...props }) => {
 						<img src={icClose} alt="x" />
 					</button>
 				</div>
-				<div class={style.modalBody}>
+				<div class={style['modal-body']}>
 					{children}
 				</div>
 			</div>

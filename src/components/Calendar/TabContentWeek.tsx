@@ -43,8 +43,8 @@ export const TabContentWeek = (props) => {
 	}
 
 	return (
-		<div class={style.weekContent}>
-			<div class={`${style.calendarTitle} flex flex-row`}>
+		<div class={style['week-content']}>
+			<div class={`${style['calendar-title']} flex flex-row`}>
 				<div class={`${style.title} text-center`}></div>
 
 				{week.map((item, index) => (
@@ -57,7 +57,7 @@ export const TabContentWeek = (props) => {
 			<div class="flex-wrap justify-between">
 				{hours.map((hour, index) => (
 					<>
-						<div class={`${style.calendarItem} flex items-center justify-center`}>
+						<div class={`${style['calendar-item']} flex items-center justify-center`}>
 							{hour}
 						</div>
 

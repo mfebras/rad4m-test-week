@@ -23,8 +23,8 @@ export const TabContentDay = (props) => {
 	}
 
 	return (
-		<div class={style.dayContent}>
-			<div class={`${style.calendarTitle} flex flex-row justify-center`}>
+		<div class={style['day-content']}>
+			<div class={`${style['calendar-title']} flex flex-row justify-center`}>
 				<span class={`${style.today} bg-primary`}>
 					{title}
 				</span>

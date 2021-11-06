@@ -79,7 +79,7 @@ export const TabContentMonth = (props) => {
 
 	return (
 		<div>
-			<div class={`${style.calendarTitle} flex flex-row`}>
+			<div class={`${style['calendar-title']} flex flex-row`}>
 				{dayNames.map((dayName, index) => (
 					<div class={`${style.title} text-center`}>
 						<span class={isToday(dayName) ? style.today + ' bg-primary' : ''}>{dayName}</span>

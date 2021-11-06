@@ -30,8 +30,8 @@
   color: #4d4d5f;
 }
 
-.inputStyle,
-%inputStyle {
+.input-style,
+%input-style {
   width: 100%;
   padding: 6px 18px;
   border: 1px solid colors.$light-grey;
@@ -39,7 +39,7 @@
 }
 
 .input {
-  @extend %inputStyle;
+  @extend %input-style;
 
   &::placeholder {
     color: #4d4d5f;
@@ -51,8 +51,8 @@
   }
 }
 
-.inputIcon {
-  @extend %inputStyle;
+.input-icon {
+  @extend %input-style;
 
   img {
     height: 15px;

@@ -105,7 +105,7 @@ export const AgendaFormCreate = () => {
 				<div class={`flex flex-row ${style.row}`}>
 					<label htmlFor="start-date" class={style.label}>Start Date</label>
 					<div class={style.col}>
-						<div class={`${style.inputIcon} flex flex-row items-center`}>
+						<div class={`${style['input-icon']} flex flex-row items-center`}>
 							<img src={icCalendarPurple} alt="" />
 							<input
 								class={style.input}
@@ -121,7 +121,7 @@ export const AgendaFormCreate = () => {
 				<div class={`flex flex-row ${style.row}`}>
 					<label htmlFor="finish-date" class={style.label}>Finish Date</label>
 					<div class={style.col}>
-						<div class={`${style.inputIcon} flex flex-row items-center`}>
+						<div class={`${style['input-icon']} flex flex-row items-center`}>
 							<img src={icCalendarPurple} alt="" />
 							<input
 								class={style.input}
@@ -149,7 +149,7 @@ export const AgendaFormCreate = () => {
 				<div class={`flex flex-row ${style.row}`}>
 					<label htmlFor="time" class={style.label}>Time</label>
 					<div class={style.col}>
-						<div class={`${style.inputIcon} flex flex-row items-center`}>
+						<div class={`${style['input-icon']} flex flex-row items-center`}>
 							<img src={icClockPurple} alt="" />
 							<input
 								class={style.input}

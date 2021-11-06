@@ -1,6 +1,6 @@
 @use "../../assets/styles/colors";
 
-.calendarTitle {
+.calendar-title {
   padding-top: 24px;
   padding-bottom: 5px;
   background: transparent;
@@ -17,14 +17,13 @@
   }
 }
 
-.calendarItemBasic,
 %calendar-item-basic {
   background: #fff9;
   margin-bottom: 3px;
   position: relative;
 }
 
-.calendarItem {
+.calendar-item {
   @extend %calendar-item-basic;
 
   width: calc(100% / 7 - 3px);
@@ -80,21 +79,21 @@
     top: 54px;
   }
 
-  .wOneSide {
+  .w-one-side {
     width: calc(100% - 3px);
   }
 
-  .wTwoSide {
+  .w-two-side {
     width: calc(100% - 6px);
   }
 
-  .barStart {
+  .bar-start {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-left: 3px;
   }
 
-  .barEnd {
+  .bar-end {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-right: 3px;
@@ -105,18 +104,18 @@
   }
 }
 
-.weekContent {
+.week-content {
   .title {
     width: calc(100% / 8);
   }
 
-  .calendarItem {
+  .calendar-item {
     width: calc(100% / 8 - 3px);
     height: 50px;
   }
 }
 
-.dayContent {
+.day-content {
   .hour {
     @extend %calendar-item-basic;
 
@@ -124,7 +123,7 @@
     height: 50px;
   }
 
-  .calendarItem {
+  .calendar-item {
     width: calc(100% * 7 / 8 - 3px);
     height: 50px;
   }

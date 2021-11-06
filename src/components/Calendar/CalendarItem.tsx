@@ -15,11 +15,11 @@ export const CalendarItem = ({ type, date, isViewMore=false, ...props }) => {
 		let finishDate = agenda.finishDate;
 
 		if (date.isSame(startDate) && date.isSame(finishDate)) {
-			barStyle = `${style.barStart} ${style.barEnd} ${style.wTwoSide}`;
+			barStyle = `${style['bar-start']} ${style['bar-end']} ${style['w-two-side']}`;
 		} else if (date.isSame(startDate) && date.isBefore(finishDate)) {
-			barStyle = `${style.barStart} ${style.wOneSide}`;
+			barStyle = `${style['bar-start']} ${style['w-one-side']}`;
 		} else if (date.isAfter(startDate) && date.isSame(finishDate)) {
-			barStyle = `${style.barEnd} ${style.wOneSide}`;
+			barStyle = `${style['bar-end']} ${style['w-one-side']}`;
 		}
 
 		return barStyle;
@@ -60,7 +60,7 @@ export const CalendarItem = ({ type, date, isViewMore=false, ...props }) => {
 		</div>;
 
 	return (
-		<div class={`${style.calendarItem} ${(isWeekend(date) ? style.weekend : '')} ${!props.agenda1 ? style.hover : ''} flex flex-col justify-between`}>
+		<div class={`${style['calendar-item']} ${(isWeekend(date) ? style.weekend : '')} ${!props.agenda1 ? style.hover : ''} flex flex-col justify-between`}>
 			{!props.agenda1 &&
 				<div
 					class={style.empty}

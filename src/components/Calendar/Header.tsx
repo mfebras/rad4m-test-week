@@ -38,39 +38,39 @@ export const Header = () => {
 			</div>
 			<div class={`${style.toolbar} flex flex-row justify-between`}>
 				<div>
-					<button class={`btn btn-icon ${style.btnCalendar}`}>
+					<button class={`btn btn-icon ${style['btn-calendar']}`}>
 						<img src={icGrid} alt="" />
 						<b>Calendar</b>
-						<img class={style.iconSm} src={icChevronDown} alt="" />
+						<img class={style['icon-sm']} src={icChevronDown} alt="" />
 					</button>
 				</div>
 				<div class="flex flex-row items-center">
 					<button
-						class={`btn btn-icon ${style.btnCalendar}`}
+						class={`btn btn-icon ${style['btn-calendar']}`}
 						onClick={() => setModal({
 							isShow: true,
 							type: 'create'
 						})}
 					>
-						<div class={style.btnPlus}>
+						<div class={style['btn-plus']}>
 							<img src={icPlusWhite} alt="" />
 						</div>
 						Add new
 					</button>
 					
-					<button class={`btn-outline btn-icon ${style.btnIcon}`}>
+					<button class={`btn-outline btn-icon ${style['btn-icon']}`}>
 						<img src={icSearch} alt="" />
 					</button>
-					<button class={`btn-outline btn-icon ${style.btnIcon}`}>
+					<button class={`btn-outline btn-icon ${style['btn-icon']}`}>
 						<img src={icUser} alt="" />
 					</button>
-					<button class={`btn-outline btn-icon ${style.btnEye}`}>
+					<button class={`btn-outline btn-icon ${style['btn-eye']}`}>
 						<img src={icEyeOff} alt="" />
 					</button>
-					<button class={`btn-outline btn-icon ${style.btnIcon}`}>
+					<button class={`btn-outline btn-icon ${style['btn-icon']}`}>
 						<img src={icAdjustment} alt="" />
 					</button>
-					<button class={`btn btn-icon ${style.btnPrimary}`}>
+					<button class={`btn btn-icon ${style['btn-primary']}`}>
 						<img src={icGearWhite} alt="" />
 					</button>
 				</div>

@@ -18,16 +18,16 @@
 }
 
 .toolbar {
-  .btnIcon {
+  .btn-icon {
     margin-right: 9px;
   }
 }
 
-.btnCalendar {
+.btn-calendar {
   font-size: 12px;
   padding-left: 0 !important;
 
-  .iconSm {
+  .icon-sm {
     height: 8px;
   }
 
@@ -37,7 +37,7 @@
   }
 }
 
-.btnPlus {
+.btn-plus {
   width: 18px;
   height: 18px;
   border-radius: 10px;
@@ -53,12 +53,12 @@
   }
 }
 
-.btnEye {
+.btn-eye {
   padding-left: 6px !important;
   padding-right: 6px !important;
   margin-right: 9px;
 }
 
-.btnPrimary {
+.btn-primary {
   background: colors.$primary !important;
 }

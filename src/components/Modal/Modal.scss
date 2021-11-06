@@ -14,7 +14,7 @@
     cursor: pointer;
   }
 
-  .modalDialog {
+  .modal-dialog {
     min-width: 480px;
     min-height: 150px;
     position: absolute;
@@ -25,13 +25,13 @@
     z-index: 1;
   }
 
-  .modalHeader {
+  .modal-header {
     align-items: flex-end;
     justify-content: flex-end;
     padding: 20px 10px 8px;
   }
 
-  .modalBody {
+  .modal-body {
     padding-left: 50px;
     padding-right: 50px;
   }
