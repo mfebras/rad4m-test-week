@@ -23,13 +23,13 @@ export const AgendaFormEdit = () => {
 	const [data, setData] = useState<DataProps>({
 		...agenda,
 		group: agenda.group
-            ? groups.filter(item => item.value === agenda.group) 	// get selected option
+            ? groups.filter(item => item.value === agenda.group)[0] 	// get selected option
             : null,
 		status: agenda.status
-            ? statuses.filter(item => item.value === agenda.status)
+            ? statuses.filter(item => item.value === agenda.status)[0]
             : null,
 		person: agenda.person
-            ? people.filter(item => item.value === agenda.person)
+            ? people.filter(item => item.value === agenda.person)[0]
             : null,
 	});
     const { setModal } = useContext(ModalContext);
@@ -76,10 +76,7 @@ export const AgendaFormEdit = () => {
     		}
     	}
 
-    	// Update state only if disable changed
-    	if (disable != isDisableSubmit) {
-    		setIsDisableSubmit(disable);
-    	}
+   		setIsDisableSubmit(disable);
     }
 
     const closeModal = () => {

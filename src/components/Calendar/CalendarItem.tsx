@@ -60,13 +60,17 @@ export const CalendarItem = ({ type, date, isViewMore=false, ...props }) => {
 		</div>;
 
 	return (
-		<div
-			class={`${style.calendarItem} ${(isWeekend(date) ? style.weekend : '')} ${!props.agenda1 ? style.hover : ''} flex flex-col justify-between`}
-			onClick={() => setModal({
-				isShow: true,
-				type: 'create'
-			})}
-		>
+		<div class={`${style.calendarItem} ${(isWeekend(date) ? style.weekend : '')} ${!props.agenda1 ? style.hover : ''} flex flex-col justify-between`}>
+			{!props.agenda1 &&
+				<div
+					class={style.empty}
+					onClick={() => setModal({
+						isShow: true,
+						type: 'create'
+					})}
+				></div>
+			}
+
 			{content}
 
 			{type == 'month' &&
