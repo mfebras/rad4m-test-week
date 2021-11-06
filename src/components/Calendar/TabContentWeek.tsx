@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
+import { convertHour, isWeekend } from '../../utils/Helper';
 import style from './TabContent.scss';
 
 export const TabContentWeek = (props) => {
@@ -33,15 +34,6 @@ export const TabContentWeek = (props) => {
 		setHours(hours);
 
 	}, [])
-
-	const convertHour = (hour: number) => {
-		return moment(hour, ['HH']).format('hh:mm A');
-	}
-
-	const isWeekend = (date) => {
-		let dayOfWeek = date.day();
-		return (dayOfWeek === 6) || (dayOfWeek  === 0); // 6 = Saturday, 0 = Sunday
-	}
 
 	if (!props.active) {
 		return null;

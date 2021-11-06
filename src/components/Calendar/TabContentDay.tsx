@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
+import { convertHour } from '../../utils/Helper';
 import style from './TabContent.scss';
 
 export const TabContentDay = (props) => {
@@ -14,10 +15,6 @@ export const TabContentDay = (props) => {
 		}
 		setHours(hours);
 	}, [])
-
-	const convertHour = (hour: number) => {
-		return moment(hour, ['HH']).format('hh:mm A');
-	}
 
 	if (!props.active) {
 		return null;

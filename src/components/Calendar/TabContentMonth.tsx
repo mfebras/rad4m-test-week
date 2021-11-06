@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import moment from 'moment';
+import { isWeekend } from '../../utils/Helper';
 import style from './TabContent.scss';
 
 export const TabContentMonth = (props) => {
@@ -25,11 +26,6 @@ export const TabContentMonth = (props) => {
 		}
 		setCalendar(calendar);
 	}, [])
-
-	const isWeekend = (date) => {
-		let dayOfWeek = date.day();
-		return (dayOfWeek === 6) || (dayOfWeek  === 0); // 6 = Saturday, 0 = Sunday
-	}
 
 	if (!props.active) {
 		return null;
