@@ -7,8 +7,8 @@ import style from './Form.scss';
 
 interface Props {
     placeholder: string,
-    options: selectOption[],
-    value?: selectOption,
+    options: selectOptionType[],
+    value?: selectOptionType,
     onChange: func,
 }
 
@@ -36,7 +36,7 @@ export const Select = (props: Props) => {
                 onClick={() => setOpen(!open)}
             >
                 <span>{props.value?.label || props.placeholder}</span>
-                <img src={props.value ? icChevronDownWhite : icChevronDown} alt="" />
+                <img src={props.value?.color ? icChevronDownWhite : icChevronDown} alt="" />
             </div>
 
             {open &&

@@ -1,5 +1,5 @@
-type selectOption = {
+type selectOptionType = {
+    value: number,
     label: string,
-    value: string,
     color?: string
 }
