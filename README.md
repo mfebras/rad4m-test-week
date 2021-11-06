@@ -4,7 +4,8 @@
 
 ``` bash
 # install dependencies
-npm install
+npm install	or if you get error, try this:
+npm i --legacy-peer-deps
 
 # serve with hot reload at localhost:8080
 npm run dev
