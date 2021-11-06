@@ -5,7 +5,7 @@ import { convertHour } from '../../utils/Helper';
 import style from './TabContent.scss';
 
 export const TabContentDay = (props) => {
-	const [hours, setHours] = useState<string>([]);
+	const [hours, setHours] = useState<string[]>([]);
 	const title = props.day
 		? moment(props.day).format('DD') +' '+ moment(props.day).format('ddd')
 		: moment().format('DD') +' '+ moment().format('ddd');

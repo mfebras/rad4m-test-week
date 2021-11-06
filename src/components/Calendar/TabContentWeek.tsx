@@ -6,7 +6,7 @@ import style from './TabContent.scss';
 
 export const TabContentWeek = (props) => {
 	const [week, setWeek] = useState([]);
-	const [hours, setHours] = useState<string>([]);
+	const [hours, setHours] = useState<string[]>([]);
 
 	// Start week from Monday
 	moment.updateLocale('en', {
